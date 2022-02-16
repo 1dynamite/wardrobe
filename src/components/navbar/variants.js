@@ -10,7 +10,7 @@ const VariantS = styled(Paper)(
     backgroundColor: props.variantc === 'light' ? 'white' : ( 
       props.variantc === 'default' ? 'rgba(0,0,0,0)' : props.theme.bgTransparent
     ),
-    padding: `${props.theme.spacing(2)} ${props.defaultWidth}`,
+    padding: `${props.theme.spacing(2)} ${parseInt(props.defaultWidth, 10) + 20}px`,
     position: 'fixed',
     top: '0',
     width: '100%',
