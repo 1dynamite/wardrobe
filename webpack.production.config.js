@@ -52,7 +52,7 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: [ '@babel/env', "@babel/preset-react" ],
-                        plugins: [ '@babel/plugin-proposal-class-properties' ]
+                        plugins: [ '@emotion', '@babel/plugin-proposal-class-properties' ]
                     }
                 }
             },

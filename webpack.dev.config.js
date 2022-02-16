@@ -11,16 +11,6 @@ module.exports = {
         publicPath: ''
     },
     mode: 'development',
-    /* devServer: {
-        port: 9000,
-        static: {
-            directory: path.resolve(__dirname, './dist'),
-        },
-        devMiddleware: {
-            index: 'index.html',
-            writeToDisk: true
-        }
-    }, */
     module: {
         rules: [
             {
@@ -54,8 +44,15 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: [ '@babel/env', "@babel/preset-react" ],
+                        presets: [ 
+                          '@babel/env', 
+                          [
+                            "@babel/preset-react", 
+                            { "runtime": "automatic", "importSource": "@emotion/react" }
+                          ]
+                        ],
                         plugins: [ 
+                        '@emotion',
                         'react-hot-loader/babel', 
                         '@babel/plugin-proposal-class-properties' 
                       ]
