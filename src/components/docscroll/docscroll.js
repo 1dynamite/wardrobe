@@ -3,8 +3,17 @@ import Navbar from '../navbar/navbar.js';
 import Sidelinks from '../sidelinks/sidelinks.js';
 import headBg from '../../../assets/headBg.jpg';
 import styled from '@emotion/styled';
+import Mainsection from '../mainsection/mainsection.js';
 
 const defaultWidth = '100px';
+
+const Container = styled.div(
+  props => ({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: props.theme.spacing(6)
+  })
+);
 
 const Div = styled.div(
   props => ({
@@ -38,7 +47,7 @@ function Docscroll() {
 
 
   return (
-    <div>
+    <Container>
       <Div>
         <Navbar 
           height={height} 
@@ -53,7 +62,10 @@ function Docscroll() {
         />
       </Div>
 
-    </div>
+      <Mainsection defaultWidth={defaultWidth}>
+
+      </Mainsection>
+    </Container>
   )
 };
 

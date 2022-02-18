@@ -2,16 +2,31 @@ import styled from '@emotion/styled';
 import { Paper, Typography } from '@mui/material';
 import { useEffect, useRef } from 'react';
 import LinkC from '../linkc/linkc.js';
+import Paddingmain from '../paddingmain/paddingmain.js';
 
-const VariantS = styled(Paper)(
+const PaddingPaper = ({setHeight, ...props}) => {
+  const innerRef = useRef(null);
+
+  useEffect(() => {
+    setHeight(innerRef.current.clientHeight);
+  }, [setHeight, innerRef]);
+
+  return (
+    <Paper innerRef={innerRef} {...props} component={Paddingmain}/>
+  );
+};
+
+const VariantS = styled(PaddingPaper)(
   props => ({
     display: 'flex',
     justifyContent: 'space-between',
     backgroundColor: props.variantc === 'light' ? 'white' : ( 
       props.variantc === 'default' ? 'rgba(0,0,0,0)' : props.theme.bgTransparent
     ),
-    padding: `${props.theme.spacing(2)} ${parseInt(props.defaultWidth, 10) + 20}px`,
+    paddingTop: props.theme.spacing(2),
+    paddingBottom: props.theme.spacing(2),
     position: 'fixed',
+    zIndex: '1',
     top: '0',
     width: '100%',
     transition: props.theme.transitions.create(['background-color', 'color'])
@@ -21,14 +36,10 @@ const VariantS = styled(Paper)(
 const rightBar = theme => ({display: 'flex', gap: theme.spacing(1)});
 
 function Variant({variant, setHeight, ...props}) {
-  const inputRef = useRef();
-
-  useEffect(() => {
-    setHeight(inputRef.current.clientHeight)
-  }, [setHeight, inputRef])
+  
   return (
     <VariantS 
-      ref={inputRef}
+      setHeight={setHeight}
       elevation={0} 
       variant={variant === 'light' ? 'outlined' : 'elevation'} 
       variantc={variant} 

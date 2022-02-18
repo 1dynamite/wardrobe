@@ -6,6 +6,7 @@ const Div = styled.div(
   props => ({
     position: 'fixed',
     right: '0',
+    zIndex: '3',
     width: props.defaultWidth,
     height: '100vh',
   })

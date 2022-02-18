@@ -9,7 +9,7 @@ function Navbar({setScrollFunction, height, setHeight, defaultWidth}) {
       height={height}
       setHeight={setHeight}
       setScrollFunction={setScrollFunction}/>
-  )
+  );
 };
 
 export default Navbar;

@@ -18,6 +18,7 @@ const Container = styled(MyPaper)(
     justifyContent: 'space-between',
     height: '100vh',
     position: 'fixed',
+    zIndex: '3',
     right: '0',
     width: props.view === 'open' ? props.defaultWidth : '0',
     overflowX: 'hidden',
@@ -41,10 +42,10 @@ const MyAvatar = styled(IconButton)(
     height: props.theme.avatarDiameter,
     margin: `0 ${props.theme.spacing(4)}`,
     backgroundColor: 'none',
-    border: props.variant === 'light' ? `1px solid ${props.theme.palette.text.primary}` : (
+    border: props.variant === 'light' ? `1px solid ${props.theme.palette.text.secondary}` : (
       '1px solid white'
     ),
-    color: props.variant === 'light' ? props.theme.palette.text.primary : 'white',
+    color: props.variant === 'light' ? props.theme.palette.text.secondary : 'white',
     ':hover': {
       backgroundColor: props.variant === 'opaque' ? props.theme.palette.primary.main : 'white',
       border: `1px solid ${props.theme.palette.primary.main}`,

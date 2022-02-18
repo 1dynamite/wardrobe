@@ -4,7 +4,7 @@ import Link from '@mui/material/Link';
 const LinkS = styled(Link)(
   props => ({
     padding: `${props.theme.spacing(1)} ${props.theme.spacing(2)}`,
-    color: props.variantc === 'light' ? props.theme.palette.text.primary : (
+    color: props.variantc === 'light' ? props.theme.palette.text.secondary : (
       props.theme.palette.primary.contrastText
     ),
     transition: props.theme.transitions.create(['background-color', 'color']),

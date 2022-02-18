@@ -20,7 +20,7 @@ const theme = createTheme({
 const App = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <div style={{height: '1600px'}}>
+    <div style={{height: '1800px'}}>
       <Docscroll/>
     </div>
   </ThemeProvider>
