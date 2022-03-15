@@ -24,6 +24,6 @@ app.get("/", function (req, res) {
   res.send(contentFromHtmlFile);
 });
 
-app.listen(3000, function () {
+app.listen(process.env.PORT, function () {
   console.log("Application is running on http://localhost:3000/");
 });
