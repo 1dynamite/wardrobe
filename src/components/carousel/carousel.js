@@ -36,10 +36,11 @@ const Items = styled.div(
 );
 
 const CardItem = styled(ImgMediaCard)(
-  ({gap, index, itemWidth}) => ({
+  ({gap, index, itemWidth, theme}) => ({
     position: 'relative',
     right: (gap + itemWidth) * index,
-    transition: 'right 0.3s'
+    transition: theme.transitions.create('right'),
+    willChange: 'right'
   })
 );
 

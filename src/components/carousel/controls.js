@@ -57,10 +57,10 @@ function Controls({itemsCount, setIndex, index, totalCount}) {
   return (
     <Container>
       <Control onClick={onClickLeft} disabled={disabledLeft}>
-        <ArrowBackIosNewSharpIcon fontSize='small'/>
+        <ArrowBackIosNewSharpIcon sx={{fontSize: '0.75rem'}}/>
       </Control>
       <Control onClick={onClickRight}  disabled={disabledRight}>
-        <ArrowForwardIosSharpIcon fontSize='small' />
+        <ArrowForwardIosSharpIcon sx={{fontSize: '0.75rem'}} />
       </Control>
     </Container>
   );

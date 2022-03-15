@@ -50,7 +50,7 @@ const MyAvatar = styled(IconButton)(
       backgroundColor: props.variant === 'opaque' ? props.theme.palette.primary.main : 'white',
       border: `1px solid ${props.theme.palette.primary.main}`,
       color: props.variant === 'opaque' ? 'none' : props.theme.palette.primary.main,
-    }
+    },
   })
 )
 
