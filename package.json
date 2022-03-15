@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.production.config.js",
     "start": "node src/server.js"
