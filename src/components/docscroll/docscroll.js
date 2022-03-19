@@ -4,6 +4,7 @@ import Sidelinks from "../sidelinks/sidelinks.js";
 import styled from "@emotion/styled";
 import Mainsection from "../mainsection/mainsection.js";
 import CarouselSI from "../carouselSI/carouselSI.js";
+import Footer from "../footer/footer";
 
 const defaultWidth = "100px";
 
@@ -46,6 +47,7 @@ function Docscroll({ theme }) {
       </CarouselSI>
 
       <Mainsection defaultWidth={defaultWidth} theme={theme}></Mainsection>
+      <Footer />
     </Container>
   );
 }

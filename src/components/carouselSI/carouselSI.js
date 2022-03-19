@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { css, jsx } from "@emotion/react";
-import headBg from "../../../assets/headBg.jpg";
-import headBg2 from "../../../assets/headBg2.jpg";
-import headBg3 from "../../../assets/headBg3.jpg";
+import headBg from "../../../assets/carousel-item1.jpg";
+import headBg2 from "../../../assets/carousel-item2.jpg";
+import headBg3 from "../../../assets/carousel-item3.jpg";
 import { Typography } from "@mui/material";
 
 const bgImages = [headBg, headBg2, headBg3];

@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require("fs");
 
 //------------------------------------------------------------------------------------
-/* var webpack = require("webpack");
+var webpack = require("webpack");
 var webpackConfig = require("../webpack.dev.config");
 var compiler = webpack(webpackConfig);
 
@@ -13,7 +13,7 @@ app.use(
     publicPath: webpackConfig.output.publicPath,
   })
 );
-app.use(require("webpack-hot-middleware")(compiler)); */
+app.use(require("webpack-hot-middleware")(compiler));
 //------------------------------------------------------------------------------------
 
 app.use("/static", express.static(path.resolve(__dirname, "../dist")));
@@ -24,6 +24,6 @@ app.get("/", function (req, res) {
   res.send(contentFromHtmlFile);
 });
 
-app.listen(process.env.PORT, function () {
+app.listen(3000, function () {
   console.log("Application is running on http://localhost:3000/");
 });

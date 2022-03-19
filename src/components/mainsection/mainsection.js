@@ -3,7 +3,17 @@ import Paddingmain from "../paddingmain/paddingmain";
 import CtgryItemsContainer from "../ctgryItemsContainer/ctgryItemsContainer";
 import CtgryItem from "../ctgryItem/ctgryItem";
 import CtgryTitle from "../ctgryTitle/ctgryTitle";
-import imgSrc from "../../../assets/browse-item1.jpg";
+import detskuyu from "../../../assets/detskuyu-mebel.jpg";
+import kuxnya from "../../../assets/kuxnya.jpg";
+import individualnie from "../../../assets/individualnie.jpg";
+import ConstCtgryContainer from "../constCtgry/container";
+import ConstCtgryItem from "../constCtgry/item";
+import spalnaya from "../../../assets/carousel-item3.jpg";
+import GoogleMaps from "../googlemaps/googlemaps";
+import headBg2 from "../../../assets/carousel-item2.jpg";
+import dresscode from "../../../assets/dresscode.jpg";
+import lighting from "../../../assets/lighting.png";
+import context from "../../../assets/context-image.jpg";
 import ContextImage from "../contextImage/contextImage";
 
 const Container = styled(Paddingmain)((props) => ({
@@ -17,7 +27,7 @@ function Mainsection({ theme, ...props }) {
   const ctgryItemProps = {
     item1: {
       imgProps: {
-        src: imgSrc,
+        src: kuxnya,
       },
       titleProps: {
         children: "Kuxonnie garnituri",
@@ -25,7 +35,7 @@ function Mainsection({ theme, ...props }) {
     },
     item2: {
       imgProps: {
-        src: imgSrc,
+        src: spalnaya,
       },
       titleProps: {
         children: "Spalniye garnituri",
@@ -33,10 +43,18 @@ function Mainsection({ theme, ...props }) {
     },
     item3: {
       imgProps: {
-        src: imgSrc,
+        src: detskuyu,
       },
       titleProps: {
         children: "Detskuyu mebel",
+      },
+    },
+    item4: {
+      imgProps: {
+        src: individualnie,
+      },
+      titleProps: {
+        children: "Individualnie zakazi",
       },
     },
   };
@@ -44,7 +62,7 @@ function Mainsection({ theme, ...props }) {
   const ctgryItemProps2 = {
     item1: {
       imgProps: {
-        src: imgSrc,
+        src: headBg2,
       },
       titleProps: {
         children: "Gardernobnoe napolnenie woodpro",
@@ -52,7 +70,7 @@ function Mainsection({ theme, ...props }) {
     },
     item2: {
       imgProps: {
-        src: imgSrc,
+        src: dresscode,
       },
       titleProps: {
         children: "Gardernobnoe napolnenie dresscode",
@@ -60,7 +78,7 @@ function Mainsection({ theme, ...props }) {
     },
     item3: {
       imgProps: {
-        src: imgSrc,
+        src: lighting,
       },
       titleProps: {
         children: "Osveshenie i prochie accessories",
@@ -70,21 +88,39 @@ function Mainsection({ theme, ...props }) {
 
   return (
     <Container defaultWidth={props.defaultWidth}>
-      <CtgryItemsContainer theme={theme}>
-        <CtgryTitle>Individualno podzakaz izgatavlivaem</CtgryTitle>
-        <CtgryItem theme={theme} {...ctgryItemProps.item1} />
-        <CtgryItem theme={theme} {...ctgryItemProps.item2} />
-        <CtgryItem theme={theme} {...ctgryItemProps.item3} />
+      <CtgryItemsContainer theme={theme} style={{ width: "90%" }}>
+        <CtgryTitle typProps={{ style: { right: -70 } }}>
+          Individualno podzakaz izgatavlivaem
+        </CtgryTitle>
+        <ConstCtgryContainer>
+          <ConstCtgryItem
+            imgSrc={ctgryItemProps.item1.imgProps.src}
+            title={ctgryItemProps.item1.titleProps.children}
+          />
+          <ConstCtgryItem
+            imgSrc={ctgryItemProps.item2.imgProps.src}
+            title={ctgryItemProps.item2.titleProps.children}
+          />
+          <ConstCtgryItem
+            imgSrc={ctgryItemProps.item3.imgProps.src}
+            title={ctgryItemProps.item3.titleProps.children}
+          />
+          <ConstCtgryItem
+            imgSrc={ctgryItemProps.item4.imgProps.src}
+            title={ctgryItemProps.item4.titleProps.children}
+          />
+        </ConstCtgryContainer>
       </CtgryItemsContainer>
-      {/* <ContextImage src={imgSrc}></ContextImage> */}
+      <ContextImage src={context}></ContextImage>
       <CtgryItemsContainer theme={theme}>
         <CtgryTitle>Some title</CtgryTitle>
-        <CtgryItem theme={theme} {...ctgryItemProps.item1} />
-        <CtgryItem theme={theme} {...ctgryItemProps.item2} />
-        <CtgryItem theme={theme} {...ctgryItemProps.item3} />
+        <CtgryItem theme={theme} {...ctgryItemProps2.item1} />
+        <CtgryItem theme={theme} {...ctgryItemProps2.item2} />
+        <CtgryItem theme={theme} {...ctgryItemProps2.item3} />
       </CtgryItemsContainer>
-      {/* <GoogleMaps theme></GoogleMaps> */}
-      {/* <footer theme></footer> */}
+      <CtgryItemsContainer theme={theme}>
+        <GoogleMaps></GoogleMaps>
+      </CtgryItemsContainer>
     </Container>
   );
 }

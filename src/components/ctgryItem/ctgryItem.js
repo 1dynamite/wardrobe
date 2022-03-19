@@ -18,14 +18,14 @@ function CtgryItem({ theme, ...props }) {
   const detailsContainerStyles = css({
     display: "flex",
     flexDirection: "column",
-    padding: `0 ${theme.spacing(4)}`,
+    padding: `${theme.spacing(2)} ${theme.spacing(4)}`,
     gap: theme.spacing(2),
     backgroundColor: "rgba(0,0,0,0)",
     flexGrow: 1,
   });
 
   return (
-    <Paper elevation={1} css={ctgryItemStyles} {...props.root}>
+    <Paper variant="outlined" css={ctgryItemStyles} {...props.root}>
       <img css={imgStyles} {...props.imgProps} />
       <div css={detailsContainerStyles}>
         <div>

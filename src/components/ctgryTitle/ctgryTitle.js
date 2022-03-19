@@ -17,7 +17,7 @@ function CtgryTitle(props) {
 
   return (
     <div css={rootStyles}>
-      <Typography css={typographyStyles} variant="h3">
+      <Typography css={typographyStyles} variant="h3" {...props.typProps}>
         {props.children}
       </Typography>
     </div>
