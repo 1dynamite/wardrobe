@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require("fs");
 
 //------------------------------------------------------------------------------------
-var webpack = require("webpack");
+/* var webpack = require("webpack");
 var webpackConfig = require("../webpack.dev.config");
 var compiler = webpack(webpackConfig);
 
@@ -13,7 +13,7 @@ app.use(
     publicPath: webpackConfig.output.publicPath,
   })
 );
-app.use(require("webpack-hot-middleware")(compiler));
+app.use(require("webpack-hot-middleware")(compiler)); */
 //------------------------------------------------------------------------------------
 
 app.use("/static", express.static(path.resolve(__dirname, "../dist")));
