@@ -21,7 +21,7 @@ const VariantS = styled(PaddingPaper)((props) => ({
     props.variantc === "light"
       ? "white"
       : props.variantc === "default"
-      ? "rgba(0,0,0,0)"
+      ? "rgba(0,0,0,0.1)"
       : props.theme.bgTransparent,
   paddingTop: props.theme.spacing(2),
   paddingBottom: props.theme.spacing(2),
@@ -44,22 +44,54 @@ function Variant({ variant, setHeight, ...props }) {
       square
       {...props}
     >
-      <LinkC
-        variantc={variant}
-        style={{ fontSize: "1.3rem", fontWeight: "500" }}
-        href="#"
+      <div
+        css={(theme) => ({
+          padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
+        })}
       >
-        SM
+        <Typography
+          css={(theme) => ({
+            color: "rgba(0,0,0,0.6)",
+            display: "inline",
+            fontSize: "1.3rem",
+            fontWeight: "500",
+          })}
+        >
+          SM
+        </Typography>
         <Typography
           css={(theme) => ({
             color: theme.palette.primary.main,
             display: "inline",
+            fontSize: "1.3rem",
+            fontWeight: "500",
           })}
         >
           A
         </Typography>
-        RTHOUSE
-      </LinkC>
+        <Typography
+          css={(theme) => ({
+            color: "rgba(0,0,0,0.6)",
+            display: "inline",
+            fontSize: "1.3rem",
+            fontWeight: "500",
+          })}
+        >
+          RT
+        </Typography>
+
+        <Typography
+          css={(theme) => ({
+            color: "rgba(0,0,0,0.6)",
+            display: "inline",
+            fontSize: "1.3rem",
+            fontWeight: "500",
+          })}
+        >
+          HOUSE
+        </Typography>
+      </div>
+
       <div css={rightBar}>
         <LinkC variantc={variant} href="#">
           Link

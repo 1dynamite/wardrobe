@@ -10,7 +10,7 @@ import ConstCtgryContainer from "../constCtgry/container";
 import ConstCtgryItem from "../constCtgry/item";
 import spalnaya from "../../../assets/carousel-item3.jpg";
 import GoogleMaps from "../googlemaps/googlemaps";
-import headBg2 from "../../../assets/carousel-item2.jpg";
+import headBg2 from "../../../assets/woodpro.jpg";
 import dresscode from "../../../assets/dresscode.jpg";
 import lighting from "../../../assets/lighting.png";
 import context from "../../../assets/context-image.jpg";
@@ -88,10 +88,14 @@ function Mainsection({ theme, ...props }) {
 
   return (
     <Container defaultWidth={props.defaultWidth}>
-      <CtgryItemsContainer theme={theme} style={{ width: "90%" }}>
-        <CtgryTitle typProps={{ style: { right: -70 } }}>
-          Individualno podzakaz izgatavlivaem
-        </CtgryTitle>
+      <CtgryItemsContainer theme={theme}>
+        <CtgryTitle>Some title</CtgryTitle>
+        <CtgryItem theme={theme} {...ctgryItemProps2.item1} />
+        <CtgryItem theme={theme} {...ctgryItemProps2.item2} />
+        <CtgryItem theme={theme} {...ctgryItemProps2.item3} />
+      </CtgryItemsContainer>
+      <CtgryItemsContainer theme={theme}>
+        <CtgryTitle>Individualno podzakaz izgatavlivaem</CtgryTitle>
         <ConstCtgryContainer>
           <ConstCtgryItem
             imgSrc={ctgryItemProps.item1.imgProps.src}
@@ -110,13 +114,6 @@ function Mainsection({ theme, ...props }) {
             title={ctgryItemProps.item4.titleProps.children}
           />
         </ConstCtgryContainer>
-      </CtgryItemsContainer>
-      <ContextImage src={context}></ContextImage>
-      <CtgryItemsContainer theme={theme}>
-        <CtgryTitle>Some title</CtgryTitle>
-        <CtgryItem theme={theme} {...ctgryItemProps2.item1} />
-        <CtgryItem theme={theme} {...ctgryItemProps2.item2} />
-        <CtgryItem theme={theme} {...ctgryItemProps2.item3} />
       </CtgryItemsContainer>
       <CtgryItemsContainer theme={theme}>
         <GoogleMaps></GoogleMaps>
