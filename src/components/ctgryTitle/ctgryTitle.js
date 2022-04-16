@@ -12,7 +12,7 @@ function CtgryTitle(props) {
     borderLeft: `5px solid ${theme.palette.primary.main}`,
     paddingLeft: theme.spacing(3),
     position: "relative",
-    right: 70,
+    left: 100,
   });
 
   return (

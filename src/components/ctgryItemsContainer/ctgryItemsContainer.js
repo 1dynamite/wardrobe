@@ -5,7 +5,7 @@ function CtgryItemsContainer({ theme, ...props }) {
     display: "flex",
     flexDirection: "column",
     gap: theme.spacing(3),
-    width: "70%",
+    width: "100%",
   });
 
   return <div css={ctgryItemsContainerStyles} {...props} />;

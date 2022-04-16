@@ -1,10 +1,12 @@
 import { css } from "@emotion/react";
 import { Button, Typography } from "@mui/material";
 import { Paper } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function CtgryItem({ theme, ...props }) {
   const ctgryItemStyles = css({
     display: "flex",
+    width: "100%",
   });
 
   const imgStyles = css({
@@ -13,6 +15,7 @@ function CtgryItem({ theme, ...props }) {
     width: "300px",
     height: "200px",
     borderRadius: theme.shape.borderRadius,
+    border: `2px solid ${theme.palette.primary.main}`,
   });
 
   const detailsContainerStyles = css({
@@ -36,7 +39,12 @@ function CtgryItem({ theme, ...props }) {
           </Typography>
         </div>
         <div>
-          <Button variant="outlined">Learn more</Button>
+          <Link
+            to={`/gallery/${props.pathId}`}
+            css={{ textDecoration: "none" }}
+          >
+            <Button variant="outlined">Learn more</Button>
+          </Link>
         </div>
       </div>
     </Paper>

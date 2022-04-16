@@ -21,7 +21,10 @@ const Container = styled(MyPaper)((props) => ({
   right: "0",
   width: props.view === "open" ? props.defaultWidth : "0",
   overflowX: "hidden",
-  backgroundColor: props.variant === "light" ? "white" : "rgba(255,0,0, 0.7)",
+  backgroundColor:
+    props.variant === "light"
+      ? props.theme.palette.text.secondary
+      : "rgba(0,0,0, 0.4)",
   padding: `${props.theme.spacing(12)} 0`,
   transition: props.theme.transitions.create("width"),
 }));
@@ -37,18 +40,15 @@ const MyAvatar = styled(IconButton)((props) => ({
   height: props.theme.avatarDiameter,
   margin: `0 ${props.theme.spacing(4)}`,
   backgroundColor: "none",
-  border:
-    props.variant === "light"
-      ? `1px solid ${props.theme.palette.text.secondary}`
-      : "1px solid white",
-  color:
-    props.variant === "light" ? props.theme.palette.text.secondary : "white",
+  border: props.variant === "light" ? `1px solid white` : "1px solid white",
+  color: props.variant === "light" ? "white" : "white",
   ":hover": {
     backgroundColor:
-      props.variant === "opaque" ? props.theme.palette.primary.main : "white",
+      props.variant === "opaque"
+        ? props.theme.palette.primary.main
+        : props.theme.palette.primary.main,
     border: `1px solid ${props.theme.palette.primary.main}`,
-    color:
-      props.variant === "opaque" ? "none" : props.theme.palette.primary.main,
+    color: props.variant === "opaque" ? "none" : "none",
   },
 }));
 

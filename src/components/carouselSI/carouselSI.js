@@ -3,14 +3,16 @@ import { css, jsx } from "@emotion/react";
 import headBg from "../../../assets/carousel-item1.jpg";
 import headBg2 from "../../../assets/carousel-item2.jpg";
 import headBg3 from "../../../assets/carousel-item3.jpg";
+import dresscode from "../../../assets/dresscode.jpg";
 import { Typography } from "@mui/material";
 
-const bgImages = [headBg, headBg2, headBg3];
+const bgImages = [headBg, headBg2, headBg3, dresscode];
 
 const bgTexts = [
   "Lorem ipsum dolor sit 1",
   "Lorem ipsum dolor sit 2",
   "Lorem ipsum dolor sit 3",
+  "Lorem ipsum dolor sit 4",
 ];
 
 let myTimeout;

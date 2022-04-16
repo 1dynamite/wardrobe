@@ -32,9 +32,14 @@ const VariantS = styled(PaddingPaper)((props) => ({
   transition: props.theme.transitions.create(["background-color", "color"]),
 }));
 
-const rightBar = (theme) => ({ display: "flex", gap: theme.spacing(1) });
-
 function Variant({ variant, setHeight, ...props }) {
+  const rightBar = (theme) => ({
+    display: "flex",
+    gap: theme.spacing(1),
+    alignItems: "center",
+    marginRight: props.defaultWidth,
+  });
+
   return (
     <VariantS
       setHeight={setHeight}
@@ -51,7 +56,7 @@ function Variant({ variant, setHeight, ...props }) {
       >
         <Typography
           css={(theme) => ({
-            color: "rgba(0,0,0,0.6)",
+            color: variant === "light" ? theme.palette.text.secondary : "white",
             display: "inline",
             fontSize: "1.3rem",
             fontWeight: "500",
@@ -71,7 +76,7 @@ function Variant({ variant, setHeight, ...props }) {
         </Typography>
         <Typography
           css={(theme) => ({
-            color: "rgba(0,0,0,0.6)",
+            color: variant === "light" ? theme.palette.text.secondary : "white",
             display: "inline",
             fontSize: "1.3rem",
             fontWeight: "500",
@@ -82,7 +87,10 @@ function Variant({ variant, setHeight, ...props }) {
 
         <Typography
           css={(theme) => ({
-            color: "rgba(0,0,0,0.6)",
+            color:
+              variant === "light"
+                ? theme.palette.text.secondary
+                : "rgba(255,255,255,0.6)",
             display: "inline",
             fontSize: "1.3rem",
             fontWeight: "500",
